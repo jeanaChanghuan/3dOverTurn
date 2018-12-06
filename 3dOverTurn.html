@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3dOverTurn</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <style type="text/css">
+
+    /*菜单动画样式*/
+     .nav{
+       height:50px;
+       width:900px;
+       margin:50px auto;
+     }
+     ul li{
+       list-style: none;
+       display: inline-block;
+       perspective: 200px;
+     }
+     .nav_content{
+      color:white;
+      text-transform: capitalize;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      transform:translateZ(-25px);
+      -webkit-transform: translateZ(-25px);
+      transition:all 0.5s linear;
+      -webkit-transition: all 0.5s linear;
+     }
+     .nav_side{
+         padding:15px 20px;
+     }
+     .nav_front{
+       background:#74adaa;
+       border-right:1px solid #94c0be;
+       transform:rotateX(0deg) translateZ(25px);
+     }
+     .nav_bottom{
+        border-right:1px solid #94c0be;
+        transform:rotateX(-90deg) translateZ(-26px);
+        background:#51938f;
+        background-size: 7px 7px;
+        background-image: linear-gradient(45deg,#478480 25%,transparent 25%,transparent 75%,#478480 75%,#478480);
+     }
+     li:first-child>div{
+       animation: nav_move 1s linear 3s infinite;
+     }
+      li:nth-child(2)>div{
+       animation: nav_move 1s linear 3.5s infinite;
+     }
+      li:nth-child(3)>div{
+       animation: nav_move 1s linear 4s infinite;
+     }
+      li:nth-child(4)>div{
+       animation: nav_move 1s linear 4.5s infinite;
+     }
+      li:nth-child(5)>div{
+       animation: nav_move 1s linear 5s infinite;
+     }
+      li:nth-child(6)>div{
+       animation: nav_move 1s linear 5.5s infinite;
+     }
+      li:last-child>div{
+       animation: nav_move 1s linear 6s infinite;
+     }
+     @keyframes nav_move {
+      to{
+        transform:rotateX(90deg) translateZ(25px);
+      }
+     }
+
+      /*图片动画样式*/
+     .img-wrapper{
+        width:200px;
+        height:200px;
+        margin:50px auto;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        perspective:1200px;
+        -webkit-perspective: 1200px;
+     }
+     .img-content{
+        margin-top: 10px;
+        animation: imgMove 3s linear infinite alternate;
+        -webkit-animation: imgMove 3s linear infinite alternate;
+     }
+     img{
+      width:200px;
+      height:100px;
+     }
+     @keyframes imgMove{
+        from{
+          transform: rotateX(0deg) rotateY(0deg) ;
+          -webkit-transform :rotateX(0deg) rotateY(0deg) ;
+        }
+        to{
+          transform:rotateX(180deg) rotateY(180deg);
+          -webkit-transform:rotateX(180deg) rotateY(180deg);
+        }
+     }
+  
+      /*魔方立方体动画样式*/
+     .cube-wrapper{
+      width:500px;
+      height:300px;
+      border:1px solid #ccc;
+      margin:0 0 100px 50px;
+      float: left;
+      perspective: 1200px;
+     }
+     .cube{
+      width:100%;
+      height:100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transform:translateZ(-100px);
+      animation: cube_Move 8s ease-in-out infinite;
+     }
+     .side{
+       width:196px;
+       height:196px;
+       border:solid 2px #000;
+       position: absolute;
+       line-height: 196px;
+       text-align: center;
+       color:white;
+       font-size: 120px;
+     }
+    .cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
+    .cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
+    .cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
+    .cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
+    .cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
+    .cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
+    .front{
+      transform:rotateX(0deg) translateZ(100px);
+    }
+    .back{
+      transform:rotateX(180deg) translateZ(100px);
+    }
+    .left{
+      transform:rotateY(-90deg) translateZ(100px);
+    }
+    .right{
+      transform:rotateY(90deg) translateZ(100px);
+    }
+    .top{
+      transform:rotateX(90deg) translateZ(100px);
+    }
+    .bottom{
+       transform:rotateX(-90deg) translateZ(100px);
+    }
+    @keyframes cube_Move{
+      from{
+        transform: rotateX(0deg) rotateY(0deg) translateZ(-100px);
+      }
+      to{
+        transform: rotateX(360deg) rotateY(360deg) translateZ(-100px);
+      }
+    }
+  </style>
+  <body>
+    <div class="nav">
+      <ul>
+        <li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">home</div>
+            <div class="nav_side nav_bottom">home</div>
+          </div>
+        </li><li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">services</div>
+            <div class="nav_side nav_bottom">services</div>
+          </div>
+        </li><li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">products</div>
+            <div class="nav_side nav_bottom">products</div>
+          </div>
+        </li><li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">about</div>
+            <div class="nav_side nav_bottom">about</div>
+          </div>
+        </li><li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">contact</div>
+            <div class="nav_side nav_bottom">contact</div>
+          </div>
+        </li><li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">blog</div>
+            <div class="nav_side nav_bottom">blog</div>
+          </div>
+        </li><li>
+          <div class="nav_content">
+            <div class="nav_side nav_front">shop on-line</div>
+            <div class="nav_side nav_bottom">shop on-line</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img-wrapper">
+       <div class="img-content">
+         <img src="img/logo1.jpg">
+       </div>
+       <div class="img-content">
+         <img src="img/logo2.jpg">
+       </div>
+    </div>
+    <div class="cube-wrapper">
+      <h1>backface-visibility:visible</h1>
+      <div class="cube">
+        <div class="side front">1</div>
+        <div class="side back">2</div>
+        <div class="side left">3</div>
+        <div class="side right">4</div>
+        <div class="side top">5</div>
+        <div class="side bottom">6</div>
+      </div>
+    </div>
+    <div class="cube-wrapper">
+      <h1>backface-visibility:visible</h1>
+      <div class="cube">
+        <div class="side front">1</div>
+        <div class="side back">2</div>
+        <div class="side left">3</div>
+        <div class="side right">4</div>
+        <div class="side top">5</div>
+        <div class="side bottom">6</div>
+      </div>
+    </div>
+  </body>
+</html>
