@@ -152,6 +152,12 @@
     .bottom{
        transform:rotateX(-90deg) translateZ(100px);
     }
+    .backface-visibility-visible .side{
+      backface-visibility: visible;
+    }
+    .backface-visibility-hidden .side{
+      backface-visibility: hidden;
+    }
     @keyframes cube_Move{
       from{
         transform: rotateX(0deg) rotateY(0deg) translateZ(-100px);
@@ -212,7 +218,7 @@
     </div>
     <div class="cube-wrapper">
       <h1>backface-visibility:visible</h1>
-      <div class="cube">
+      <div class="cube backface-visibility-visible">
         <div class="side front">1</div>
         <div class="side back">2</div>
         <div class="side left">3</div>
@@ -223,7 +229,7 @@
     </div>
     <div class="cube-wrapper">
       <h1>backface-visibility:visible</h1>
-      <div class="cube">
+      <div class="cube backface-visibility-hidden">
         <div class="side front">1</div>
         <div class="side back">2</div>
         <div class="side left">3</div>
